@@ -1,13 +1,16 @@
 \documentclass{moderncv}
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
-
+%
+\usepackage{multibib}
+\newcites{publications,patents}{{Publications},{Patents}}
+%
 \moderncvstyle{casual}
 \moderncvcolor{blue}
-
+%
 \usepackage[scale=0.8]{geometry}
 \recomputelengths
-
+%
 \firstname{Andrea}
 \familyname{Finocchio}
 \title{Sr Bioinformatics Scientist}
@@ -34,9 +37,14 @@
 %
 \closesection{}
 %
-% Publications from a BibTeX file
-\nocite{*}
-\bibliographystyle{plain}
-\bibliography{publications} % ’publications’ is the name of a BibTeX file
+\section{Appendix}
+%
+\nocitepublications{*}
+\bibliographystylepublications{plain} 
+\bibliographypublications{publications}
+% 
+\nocitepatents{*}
+\bibliographystylepatents{plain} 
+\bibliographypatents{patents}
 %
 \end{document}
